@@ -32,6 +32,7 @@ in
             monitor = config.trpb.desktopEnvironment.monitor;
             bind = config.trpb.desktopEnvironment.bind;
             exec = config.trpb.desktopEnvironment.exec;
+            env = config.trpb.desktopEnvironment.env;
             applications = config.trpb.desktopEnvironment.applications;
           };
           plugins = [
