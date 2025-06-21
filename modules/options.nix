@@ -1,10 +1,14 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 {
   options.trpb.desktopEnvironment = {
+
+    portalPackage = lib.mkPackageOption pkgs "xdg-desktop-portal-hyprland" { };
+
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
@@ -70,5 +74,6 @@
       default = "DP-1";
       description = "Waybar output";
     };
+
   };
 }

@@ -21,7 +21,7 @@ in
 {
   imports = [ ./options.nix ];
 
-  config = lib.mkIf (config.trpb.shell.enable) (
+  config = lib.mkIf (config.trpb.desktopEnvironment.enable) (
     lib.mkMerge [
       qt
       walker
@@ -43,8 +43,8 @@ in
         xdg.portal = {
           enable = true;
           extraPortals = [
+            config.trpb.desktopEnvironment.portalPackage
             pkgs.xdg-desktop-portal-gtk
-            pkgs.xdg-desktop-portal-hyprland
           ];
           config = {
             hyprland = {
